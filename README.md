@@ -3,7 +3,7 @@
 ## Test-IPRange.ps1
 
 ```powershell
-.\fast-ping.ps1 -Start "<start>" -End "<end>" [-Timeout <ms>] [-ShowUnreachable]
+.\Test-IPRange.ps1 -Start "<start>" -End "<end>" [-Timeout <ms>] [-ShowUnreachable]
 ```
 | Parameter | Description |
 | --------- | ----------- |
