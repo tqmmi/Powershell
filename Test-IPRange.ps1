@@ -1,6 +1,8 @@
 param (
-    [string]$Start = "192.168.1.1",
-    [string]$End = "192.168.1.255",
+    [Parameter(Mandatory=$true)]
+    [string]$StartIP,
+    [Parameter(Mandatory=$true)]
+    [string]$EndIP,
     [int]$Timeout = 100,
     [switch]$ShowUnreachable
 )
@@ -20,8 +22,8 @@ function Convert-UInt32ToIP {
     return "$a.$b.$c.$d"
 }
 
-$startInt = Convert-IPToUInt32 $Start
-$endInt = Convert-IPToUInt32 $End
+$startInt = Convert-IPToUInt32 $StartIP
+$endInt = Convert-IPToUInt32 $EndIP
 $total = $endInt - $startInt + 1
 $count = 0
 
