@@ -44,7 +44,11 @@ while ($true) {
         Write-Host "$ip : $($statusMap[$ip])".PadRight(30) -ForegroundColor $color
     }
 
-    [Console]::SetCursorPosition(0, $startY + $sortedIPs.Count)
+    $maxY = [Console]::BufferHeight
+    if (($startY + $i) -ge 0 -and ($startY + $i) -lt $maxY) {
+        [Console]::SetCursorPosition(0, $startY + $i)
+    }
+    
     $timestamp = Get-Date -Format "HH:mm:ss"
     Write-Host "Last checked: $timestamp".PadRight(30)
 
