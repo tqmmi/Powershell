@@ -46,9 +46,8 @@ while ($true) {
 
     $maxY = [Console]::BufferHeight
     if (($startY + $i) -ge 0 -and ($startY + $i) -lt $maxY) {
-        [Console]::SetCursorPosition(0, $startY + $i)
+        [Console]::SetCursorPosition(0, $startY + $sortedIPs.Count)
     }
-    
     $timestamp = Get-Date -Format "HH:mm:ss"
     Write-Host "Last checked: $timestamp".PadRight(30)
 
